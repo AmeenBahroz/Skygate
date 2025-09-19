@@ -1,0 +1,17 @@
+{
+  "short_name": "Skygate Group",
+  "name": "Skygate Group - Connecting Business Worldwide",
+  "icons": [
+    {
+      "src": "logos/skygate-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1E40AF",
+  "background_color": "#ffffff"
+}
+
+

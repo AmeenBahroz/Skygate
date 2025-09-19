@@ -1,0 +1,1138 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import HeroSection from '../common/HeroSection';
+import ServiceCard from '../common/ServiceCard';
+import Button from '../common/Button';
+import SkygateLogisticsLogo from '../logos/SkygateLogisticsLogo';
+
+const LogisticsPage = () => {
+  const services = [
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+      ),
+      title: "USA-China Freight Forwarding",
+      description: "Complete freight forwarding solutions for USA-China trade routes. We handle air, sea, and land transportation with competitive rates, customs clearance, and real-time tracking. Whether importing electronics from China or exporting agricultural products to China, we ensure seamless delivery.",
+      benefits: ["Competitive shipping rates", "Real-time tracking", "Customs clearance included", "Insurance coverage available"]
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+      title: "Strategic Warehousing",
+      description: "Strategic warehousing facilities in key USA-China trade hubs. Our advanced inventory management systems and efficient distribution networks reduce transit times and storage costs while ensuring product quality and security.",
+      benefits: ["Prime location warehouses", "Advanced inventory systems", "Reduced transit times", "Quality assurance"]
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      title: "Import/Export Management",
+      description: "End-to-end import and export management for USA-China trade. We handle all documentation, customs clearance, regulatory compliance, and trade financing. Our experts navigate complex regulations to keep your shipments moving smoothly.",
+      benefits: ["Complete documentation", "Regulatory compliance", "Trade financing", "Expert guidance"]
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+      title: "Global Last-Mile Delivery",
+      description: "Reliable last-mile delivery solutions for USA, China, and global destinations. Our extensive network ensures your products reach customers quickly and safely, with options for same-day, next-day, and scheduled deliveries.",
+      benefits: ["Extensive delivery network", "Flexible delivery options", "Package protection", "Delivery confirmation"]
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+      title: "Custom Trade Solutions",
+      description: "Bespoke import/export solutions tailored to your specific USA-China trade needs. We analyze your business requirements and create customized logistics strategies that optimize costs, improve efficiency, and accelerate growth.",
+      benefits: ["Customized strategies", "Cost optimization", "Efficiency improvements", "Growth acceleration"]
+    }
+  ];
+
+  const features = [
+    "Specialized USA-China trade routes and connections",
+    "Complete import and export documentation handling",
+    "Real-time shipment tracking across all trade routes",
+    "Advanced customs clearance and compliance",
+    "Strategic warehousing in key USA-China trade locations",
+    "24/7 customer support for international trade",
+    "Cost-effective import/export solutions",
+    "Risk management and trade insurance coverage"
+  ];
+
+  const industries = [
+    "Manufacturing & Industrial",
+    "Retail & E-commerce",
+    "Healthcare & Pharmaceuticals",
+    "Automotive & Aerospace",
+    "Technology & Electronics",
+    "Food & Beverage",
+    "Textiles & Fashion",
+    "Energy & Utilities"
+  ];
+
+  return (
+    <div>
+      {/* Premium Hero Section */}
+      <HeroSection
+        title="Skygate Logistics"
+        subtitle="Connecting businesses between USA, China, and the world through comprehensive import and export solutions"
+        background="logistics"
+        fullScreen={true}
+        ctaButtons={[
+          { 
+            text: "Our Logistics Services", 
+            className: "inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-700 focus:outline-none focus:ring-4 focus:ring-white/40 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-2 hover:scale-105 active:translate-y-0 active:scale-100 relative overflow-hidden group border-2 border-white/90 text-white hover:bg-white hover:text-logistics-600 bg-white/15 backdrop-blur-2xl px-12 py-6 text-xl shadow-2xl hover:shadow-white/30 shadow-white/15 hover:shadow-white/50 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/30 before:via-white/15 before:to-white/30 before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000",
+            onClick: () => window.scrollTo({ top: document.getElementById('logistics-services').offsetTop, behavior: 'smooth' })
+          }
+        ]}
+      />
+
+      {/* Section 1: Core Services */}
+      <section id="logistics-services" className="section-premium bg-gradient-to-br from-logistics-50 via-logistics-100/30 to-logistics-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-logistics-100/20 via-transparent to-logistics-200/10"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-logistics-100/15 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-primary-100/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 animate-fade-in-up tracking-tight">
+              Our <span className="text-gradient-logistics">Logistics Services</span>
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-light mb-4" style={{animationDelay: '0.2s'}}>
+              Comprehensive logistics solutions specializing in shipping goods from the United States and China. We ensure your products reach their destination safely, quickly, and efficiently.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-lg text-gray-500 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <span className="flex items-center"><span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>Global Reach</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>Trade Compliance</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>Cost Optimization</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>24/7 Support</span>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Import Services */}
+            <div className="animate-fade-in-up">
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+              <div className="relative z-10 p-8">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  Freight Forwarding
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Comprehensive freight forwarding services for air, sea, and land transportation with global reach and competitive rates. Specializing in USA-China trade routes.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Air, sea, and land transportation
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Global reach and competitive rates
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    USA-China specialization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Real-time tracking
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Export Services */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H3" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  Warehousing & Distribution
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  State-of-the-art warehousing facilities with advanced inventory management and efficient distribution networks for businesses and individuals.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Advanced inventory management
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Efficient distribution networks
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    State-of-the-art facilities
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Secure storage solutions
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Freight Forwarding */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  Supply Chain Management
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  End-to-end supply chain optimization with real-time tracking and analytics for improved efficiency and reliable delivery.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    End-to-end optimization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Real-time tracking
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Performance analytics
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Improved efficiency
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Customs & Trade Compliance */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  Last-Mile Delivery
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Reliable last-mile delivery solutions ensuring your products reach customers quickly and safely across all destinations.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Quick and safe delivery
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Reliable solutions
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Global coverage
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Customer satisfaction
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Warehousing & Distribution */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  Custom Logistics Solutions
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Tailored logistics solutions designed to meet your specific business requirements and challenges with personalized service.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Tailored solutions
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Business requirements
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Personalized service
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Flexible approach
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Supply Chain Solutions */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">
+                  International Shipping
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Specialized international shipping services from the United States and China to destinations worldwide with comprehensive support.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    USA-China specialization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Global destinations
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Comprehensive support
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <div className="w-1.5 h-1.5 bg-logistics-500 rounded-full mr-3"></div>
+                    Reliable delivery
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Import/Export Process Overview */}
+      <section className="section-premium bg-gradient-to-br from-logistics-100/30 via-logistics-50 to-logistics-100/20 relative overflow-hidden">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-logistics-200/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-logistics-300/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 animate-fade-in-up tracking-tight">
+              Our <span className="text-gradient-logistics">Logistics Process</span>
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-light" style={{animationDelay: '0.2s'}}>
+              From bringing goods from the United States and China to ensuring fast, safe, and reliable delivery for businesses and individuals.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Import Process */}
+            <div className="animate-fade-in-up">
+              <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-white/40 shadow-elevated p-8">
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                    </svg>
+              </div>
+                  <h3 className="text-3xl font-black text-gray-900 tracking-tight">From USA & China</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">1</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Source & Coordinate</h4>
+                      <p className="text-gray-600">Partner with suppliers in USA and China to coordinate procurement activities</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">2</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Documentation & Compliance</h4>
+                      <p className="text-gray-600">Handle all necessary documentation and ensure regulatory compliance</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">3</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Freight Forwarding</h4>
+                      <p className="text-gray-600">Arrange air, sea, and land transportation with competitive rates</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">4</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Supply Chain Management</h4>
+                      <p className="text-gray-600">Optimize end-to-end supply chain with real-time tracking</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">5</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Last-Mile Delivery</h4>
+                      <p className="text-gray-600">Reliable delivery ensuring products reach customers quickly and safely</p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Export Process */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-white/40 shadow-elevated p-8">
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H3" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-black text-gray-900 tracking-tight">To Global Markets</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">1</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Market Assessment</h4>
+                      <p className="text-gray-600">Evaluate target markets and assess export requirements</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">2</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Documentation & Compliance</h4>
+                      <p className="text-gray-600">Prepare all necessary export documentation and ensure compliance</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">3</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Freight Forwarding</h4>
+                      <p className="text-gray-600">Arrange international shipping with comprehensive support</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">4</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Supply Chain Management</h4>
+                      <p className="text-gray-600">End-to-end optimization with real-time tracking and analytics</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-full flex items-center justify-center mr-4 mt-1 text-white font-bold text-sm">5</div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">Last-Mile Delivery</h4>
+                      <p className="text-gray-600">Reliable delivery to international customers with confirmation</p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Industries We Serve */}
+      <section className="section-premium bg-gradient-to-br from-logistics-50 via-logistics-100/20 to-logistics-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-logistics-100/20 via-transparent to-logistics-200/10"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-logistics-200/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-logistics-300/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 animate-fade-in-up tracking-tight">
+              Industries <span className="text-gradient-logistics">We Serve</span>
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-light" style={{animationDelay: '0.2s'}}>
+              Specialized logistics solutions for diverse industries, with expertise in USA-China trade routes and global distribution networks.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Manufacturing */}
+            <div className="animate-fade-in-up">
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Manufacturing</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Industrial equipment, machinery parts, and manufacturing components from USA and China to global markets.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Heavy machinery transport
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Industrial components
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Manufacturing equipment
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Technology</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">Electronics, software, and tech hardware with specialized handling for sensitive equipment and components.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Electronics & components
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Tech hardware
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Software & licenses
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Healthcare */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Healthcare</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">Medical equipment, pharmaceuticals, and healthcare supplies with temperature-controlled and secure transport.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Medical equipment
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Pharmaceuticals
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Healthcare supplies
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Retail & E-commerce */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Retail & E-commerce</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Consumer goods, fashion, and retail products with efficient distribution and last-mile delivery solutions.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Consumer goods
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Fashion & textiles
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    E-commerce fulfillment
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Automotive */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Automotive</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Vehicle parts, automotive components, and specialized equipment with precision handling and delivery.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Vehicle parts
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Automotive components
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Specialized equipment
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Food & Beverage */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Food & Beverage</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Food products, beverages, and perishables with temperature-controlled logistics and fast delivery.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Food products
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Beverages
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Perishables
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Why Choose Skygate */}
+      <section className="section-premium bg-gradient-to-br from-logistics-100/20 via-logistics-50 to-logistics-100/15 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-logistics-200/15 via-transparent to-logistics-300/8"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-logistics-300/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-logistics-400/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 animate-fade-in-up tracking-tight">
+                Why Choose <span className="text-gradient-logistics">Skygate Logistics?</span>
+              </h2>
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-light" style={{animationDelay: '0.2s'}}>
+              Our logistics expertise combined with cutting-edge technology ensures your shipments are handled with precision and care. We deliver results that exceed expectations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* USA-China Expertise */}
+            <div className="animate-fade-in-up">
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">USA-China Expertise</h3>
+                <p className="text-gray-600 leading-relaxed">Specialized knowledge of trade regulations, customs procedures, and logistics networks between USA and China.</p>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Advanced Technology */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Advanced Technology</h3>
+                <p className="text-gray-600 leading-relaxed">Cutting-edge tracking systems, digital documentation, and real-time visibility for all shipments.</p>
+              </div>
+            </div>
+
+            {/* 24/7 Support */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">24/7 Support</h3>
+                <p className="text-gray-600 leading-relaxed">Round-the-clock customer support and emergency assistance for all your logistics needs.</p>
+              </div>
+            </div>
+
+            {/* Global Network */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                    </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Global Network</h3>
+                <p className="text-gray-600 leading-relaxed">Extensive network of partners and facilities across 50+ countries for seamless global logistics.</p>
+                </div>
+              </div>
+
+            {/* Cost-Effective Solutions */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Cost-Effective Solutions</h3>
+                <p className="text-gray-600 leading-relaxed">Competitive pricing with transparent costs and no hidden fees for all logistics services.</p>
+              </div>
+            </div>
+
+            {/* Reliable Delivery */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Reliable Delivery</h3>
+                <p className="text-gray-600 leading-relaxed">99.5% on-time delivery rate with comprehensive insurance and damage protection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 11: Import/Export Resources */}
+      <section className="section-premium bg-gradient-to-br from-logistics-50 via-logistics-100/20 to-logistics-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-logistics-100/25 via-transparent to-logistics-200/10"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-logistics-200/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-logistics-300/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 animate-fade-in-up tracking-tight">
+              Import/Export <span className="text-gradient-logistics">Resources</span>
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-light" style={{animationDelay: '0.2s'}}>
+              Essential tools, guides, and resources to help you navigate international trade regulations and optimize your logistics operations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Trade Guides */}
+            <div className="animate-fade-in-up">
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Trade Guides</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Comprehensive guides for USA-China trade regulations, customs procedures, and compliance requirements.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Customs procedures
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Tariff classifications
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Documentation requirements
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools & Calculators */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Tools & Calculators</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Interactive tools for cost estimation, duty calculations, and logistics planning.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Cost calculators
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Duty estimators
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Transit time calculators
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Industry Reports */}
+            <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="group relative bg-white/95 backdrop-blur-xl rounded-3xl border-2 border-logistics-200 shadow-elevated hover:shadow-floating hover:border-logistics-400 transition-all duration-500 cursor-pointer overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-logistics-50 to-logistics-100 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+                <div className="p-8 relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-logistics-500 to-logistics-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-logistics-700 transition-colors duration-300">Industry Reports</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">Market insights, trade statistics, and industry analysis for informed decision-making.</p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Market analysis
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Trade statistics
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="w-2 h-2 bg-logistics-500 rounded-full mr-2"></span>
+                    Trend reports
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 12: Contact & Get Started */}
+      <section className="py-16 bg-gradient-to-br from-logistics-100/30 via-logistics-50 to-logistics-100/20 relative overflow-hidden">
+        {/* Clean background elements */}
+        <div className="absolute top-10 right-10 w-48 h-48 bg-logistics-200/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-logistics-300/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container-premium text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 animate-fade-in-up tracking-tight" style={{color: '#bf2530'}}>
+            Ready to Get Started?
+          </h2>
+          <p className="text-lg mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up font-light" style={{animationDelay: '0.2s', color: '#991b1b'}}>
+            Get expert help with your shipping and logistics needs.
+          </p>
+          <div className="flex justify-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <Link to="/contact?category=logistics">
+              <button className="inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-700 focus:outline-none focus:ring-4 focus:ring-red-200 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-2 hover:scale-105 active:translate-y-0 active:scale-100 relative overflow-hidden group border-2 bg-white px-8 py-4 text-lg shadow-2xl hover:shadow-red-300 shadow-red-200" style={{borderColor: '#bf2530', color: '#bf2530'}} onMouseEnter={(e) => {e.target.style.backgroundColor = '#bf2530'; e.target.style.color = 'white';}} onMouseLeave={(e) => {e.target.style.backgroundColor = 'white'; e.target.style.color = '#bf2530';}}>
+                Contact Logistics Team
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Logistics Footer */}
+      <footer className="bg-gradient-to-br from-logistics-800 via-logistics-900 to-logistics-950 text-white relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-float-slow"></div>
+        <div className="absolute bottom-10 left-10 w-24 h-24 bg-white/5 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '3s'}}></div>
+        
+        <div className="container-premium relative z-10">
+          {/* Main Footer Content */}
+          <div className="py-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* Brand Identity */}
+              <div className="md:col-span-1">
+                <div className="mb-6">
+                  <SkygateLogisticsLogo className="h-12 w-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Skygate Logistics</h3>
+                  <p className="text-logistics-100 text-sm leading-relaxed">
+                    YOUR SERVICE. OUR PROMISE.
+                  </p>
+                  <p className="text-logistics-200 text-sm mt-2">
+                    Empowering global trade through seamless logistics solutions since 2018
+                  </p>
+                  <p className="text-logistics-300 text-xs mt-3 italic">
+                    • Logistics Services Footer •
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Contact */}
+              <div className="md:col-span-1">
+                <h4 className="text-lg font-semibold text-white mb-4">Quick Contact</h4>
+                <div className="space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <svg className="w-5 h-5 text-logistics-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href="tel:+9647505552720" className="text-logistics-100 hover:text-white transition-colors duration-300">
+                        +964 750 555 2720
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <svg className="w-5 h-5 text-logistics-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href="tel:+9647855552720" className="text-logistics-100 hover:text-white transition-colors duration-300">
+                        +964 785 555 2720
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-logistics-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:Skygate.logistic.iq@gmail.com" className="text-logistics-100 hover:text-white transition-colors duration-300">
+                      Skygate.logistic.iq@gmail.com
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-5 h-5 text-logistics-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <a href="https://maps.app.goo.gl/JUBs9yEjsWs2d7329" target="_blank" rel="noopener noreferrer" className="text-logistics-100 hover:text-white transition-colors duration-300">
+                      Villa No. 297, 1 Italian Village Rd<br />Erbil, Erbil Governorate
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Essential Links */}
+              <div className="md:col-span-1">
+                <h4 className="text-lg font-semibold text-white mb-4">Essential Links</h4>
+                <div className="space-y-3">
+                  <Link to="/about" className="block text-logistics-100 hover:text-white transition-colors duration-300">
+                    About Us
+                  </Link>
+                  <Link to="/logistics" className="block text-logistics-100 hover:text-white transition-colors duration-300">
+                    Logistics Services
+                  </Link>
+                  <Link to="/travel" className="block text-logistics-100 hover:text-white transition-colors duration-300">
+                    Travel Services
+                  </Link>
+                  <Link to="/contact" className="block text-logistics-100 hover:text-white transition-colors duration-300">
+                    Contact Us
+                  </Link>
+                </div>
+              </div>
+
+              {/* Connect */}
+              <div className="md:col-span-1">
+                <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
+                <p className="text-logistics-100 text-sm mb-4">Follow Skygate Logistics</p>
+                <div className="flex space-x-4">
+                  <a href="https://www.instagram.com/skygate_logistic.iq?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105" style={{color: 'rgb(209, 213, 219)'}}>
+                    <span className="sr-only">Instagram</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.281c-.49 0-.928-.175-1.297-.49-.368-.315-.49-.753-.49-1.243s.122-.928.49-1.243c.369-.315.807-.49 1.297-.49s.928.175 1.297.49c.368.315.49.753.49 1.243s-.122.928-.49 1.243c-.369.315-.807.49-1.297.49z"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.facebook.com/share/19u4XFWaks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105" style={{color: 'rgb(209, 213, 219)'}}>
+                    <span className="sr-only">Facebook</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </a>
+                  <div className="relative group">
+                    <div className="transition-transform duration-300 hover:scale-105 opacity-50 cursor-not-allowed" style={{color: 'rgb(209, 213, 219)'}}>
+                      <span className="sr-only">TikTok - Coming Soon</span>
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      </svg>
+                    </div>
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                      Coming Soon
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-logistics-700 py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-center md:text-left">
+                <p className="text-logistics-200 text-sm">
+                  © 2025 Skygate Logistics. All rights reserved.
+                </p>
+                <p className="text-logistics-300 text-xs mt-1">
+                  Serving 750+ clients worldwide | 7+ Years Experience
+                </p>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="text-logistics-300 text-xs">
+                  Developed by{' '}
+                  <a href="mailto:Ameen.bahroz310@gmail.com" className="hover:text-white transition-colors duration-300">
+                    Ameen Bahroz Musa
+                  </a>
+                </p>
+                <div className="flex space-x-4 mt-2 text-xs">
+                  <a href="#" className="text-logistics-300 hover:text-white transition-colors duration-300">
+                    Privacy Policy
+                  </a>
+                  <span className="text-logistics-400">|</span>
+                  <a href="#" className="text-logistics-300 hover:text-white transition-colors duration-300">
+                    Terms of Service
+                  </a>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LogisticsPage;
+
+
